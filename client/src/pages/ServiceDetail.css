@@ -1,0 +1,119 @@
+/* Generic Service Details Page Style */
+@import '../styles/Pages.css';
+
+.svc-detail-hero {
+  background: linear-gradient(135deg, #0b1a30 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 60px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-detail-hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.svc-detail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37, 99, 235, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 16px;
+}
+
+.svc-detail-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.svc-detail-lead {
+  font-size: 17px;
+  color: #cbd5e1;
+  line-height: 1.65;
+  max-width: 900px;
+}
+
+.svc-detail-content {
+  padding: 70px 0 90px;
+}
+
+.svc-detail-overview-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 40px;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.svc-detail-overview-box h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.svc-detail-overview-box p {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.svc-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.svc-step-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.svc-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.svc-step-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.svc-step-item p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .svc-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

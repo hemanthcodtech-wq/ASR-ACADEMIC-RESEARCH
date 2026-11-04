@@ -1,0 +1,390 @@
+{
+  "coordinators": [
+    {
+      "id": "coord_1",
+      "name": "Dr. Rajesh K.",
+      "title": "Senior Publication Lead",
+      "department": "Electrical & Renewable Systems Cell",
+      "email": "rajesh.k@asracademicresearch.com",
+      "phone": "+91 9515207724",
+      "active_papers_count": 8
+    },
+    {
+      "id": "coord_2",
+      "name": "Ms. S. Ananya",
+      "title": "Post-Acceptance Coordinator",
+      "department": "Computer Science & AI Division",
+      "email": "ananya.s@asracademicresearch.com",
+      "phone": "+91 9515207724",
+      "active_papers_count": 5
+    },
+    {
+      "id": "coord_3",
+      "name": "Dr. Vikramaditya M.",
+      "title": "Senior Peer Review Editor",
+      "department": "Mechanical & Materials Engineering Division",
+      "email": "vikram.m@asracademicresearch.com",
+      "phone": "+91 9515207724",
+      "active_papers_count": 6
+    },
+    {
+      "id": "coord_4",
+      "name": "Dr. Shalini Prasad",
+      "title": "Journal Indexing & Scopus Liaison",
+      "department": "Biotechnology & Health Sciences Cell",
+      "email": "shalini.p@asracademicresearch.com",
+      "phone": "+91 9515207724",
+      "active_papers_count": 4
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "email": "admin@asracademicresearch.com",
+      "username": "admin",
+      "password": "adminPassword123!",
+      "full_name": "Chief Editorial Administrator",
+      "role": "admin",
+      "phone": "+91 9515207724",
+      "institution": "ASR Academic Research Solutions Head Office",
+      "created_at": "2026-11-04T12:01:47.954Z"
+    },
+    {
+      "id": 2,
+      "email": "kancharlahemanth89@gmail.com",
+      "username": "hemanth",
+      "password": "AuthorPassword123!",
+      "full_name": "Dr. Hemanth Kancharla",
+      "role": "author",
+      "phone": "+91 9515207724",
+      "institution": "Department of Electrical & Computer Engineering, Research Hub",
+      "created_at": "2026-11-04T12:01:47.955Z"
+    },
+    {
+      "id": 3,
+      "email": "kancharla@gmail.com",
+      "username": "kancharla",
+      "password": "AuthorPassword123!",
+      "full_name": "Prof. Kancharla",
+      "role": "author",
+      "phone": "+91 9515207724",
+      "institution": "Department of Computer Science",
+      "created_at": "2026-11-04T12:01:47.955Z"
+    },
+    {
+      "id": 4,
+      "email": "chinnakancharla1@gmail.com",
+      "username": "chinna",
+      "password": "AuthorPassword123!",
+      "full_name": "Chinna",
+      "role": "author",
+      "phone": "+91 9515207724",
+      "institution": "Institute of Advanced Engineering",
+      "created_at": "2026-11-04T12:01:47.955Z"
+    }
+  ],
+  "papers": [
+    {
+      "id": "ASR-2026-695",
+      "title": "HIII",
+      "primary_author_email": "chinnakancharla1@gmail.com",
+      "target_journal": "Energy Conversion and Management (Elsevier)",
+      "indexing_tier": "SCI / SCIE (Q1) • Scopus Indexed",
+      "status": "Manuscript Preparation",
+      "stage_number": 2,
+      "submission_date": "2026-11-04",
+      "assigned_department": "Electrical & Renewable Systems Cell",
+      "assigned_coordinator": "Dr. Rajesh K. (Senior Publication Lead)",
+      "coordinator_phone": "+91 9515207724",
+      "author_positions": "Chinna (Corresponding Author)",
+      "co_authors": "None recorded",
+      "abstract_text": "",
+      "next_step_action": "Progressed to Stage 2: Manuscript Preparation. Notification email dispatched.",
+      "payment": {
+        "id": 3,
+        "paper_id": "ASR-2026-695",
+        "author_email": "chinnakancharla1@gmail.com",
+        "invoice_number": "INV-ASR-2026-8165",
+        "total_amount": 50000,
+        "amount_paid": 5000,
+        "currency": "INR",
+        "payment_status": "Partial",
+        "payment_method": "NEFT / Net Banking",
+        "transaction_ref": "ABC",
+        "due_date": "2026-12-04",
+        "paid_at": null,
+        "invoice_url": "/invoices/ASR-2026-695-invoice.pdf",
+        "receipt_url": "/receipts/ASR-2026-695-receipt.pdf",
+        "transactions": [
+          {
+            "id": "tx_init_hiii",
+            "amount": 5000,
+            "method": "NEFT / Net Banking",
+            "transaction_ref": "ABC",
+            "timestamp": "2026-11-04T12:01:47.955Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ASR-2024-ENG-084",
+      "title": "Deep Learning Based Adaptive MPPT for Hybrid Solar–Wind Microgrid Systems",
+      "primary_author_email": "kancharlahemanth89@gmail.com",
+      "target_journal": "Energy Conversion and Management (Elsevier)",
+      "indexing_tier": "SCI / SCIE (Q1) • Scopus Indexed",
+      "status": "Revision Requested",
+      "stage_number": 6,
+      "submission_date": "2024-03-12",
+      "expected_decision_date": "2024-05-15",
+      "assigned_department": "Electrical & Renewable Systems Cell",
+      "assigned_coordinator": "Dr. Rajesh K. (Senior Publication Lead)",
+      "coordinator_phone": "+91 9515207724",
+      "author_positions": "Dr. K. Sharma (1st Author), Prof. M. Verma, A. Reddy",
+      "co_authors": "Prof. M. Verma, A. Reddy",
+      "abstract_text": "This paper proposes a deep reinforcement learning framework for high-efficiency Maximum Power Point Tracking (MPPT) in hybrid renewable microgrid setups.",
+      "next_step_action": "Reviewer comments consolidated. Minor revisions to simulation graph and methodology required."
+    },
+    {
+      "id": "ASR-2023-CS-119",
+      "title": "Optimized Graph Neural Networks for Fraud Detection in Real-Time Banking Transactions",
+      "primary_author_email": "kancharlahemanth89@gmail.com",
+      "target_journal": "Knowledge-Based Systems (Elsevier)",
+      "indexing_tier": "SCI / SCIE (Q1) • Impact Factor: 8.8",
+      "status": "Accepted (In Press)",
+      "stage_number": 8,
+      "submission_date": "2023-11-05",
+      "expected_decision_date": "2024-02-10",
+      "assigned_department": "Artificial Intelligence & Computer Science",
+      "assigned_coordinator": "Ms. S. Ananya (Post-Acceptance Coordinator)",
+      "coordinator_phone": "+91 9515207724",
+      "author_positions": "Dr. H. Kancharla (1st Author & Corresponding), Dr. P. Rao",
+      "co_authors": "Dr. P. Rao (IISc Bengaluru)",
+      "abstract_text": "We demonstrate an inductive graph neural network with attention-driven anomaly clustering that achieves 99.4% precision with sub-millisecond latency on high-throughput distributed transaction ledgers.",
+      "next_step_action": "Final author proof approval submitted. Issue assignment and DOI assignment under final processing."
+    }
+  ],
+  "authorPaperMapping": [
+    {
+      "author_email": "chinnakancharla1@gmail.com",
+      "paper_id": "ASR-2026-695",
+      "role_in_paper": "First Author"
+    },
+    {
+      "author_email": "kancharlahemanth89@gmail.com",
+      "paper_id": "ASR-2024-ENG-084",
+      "role_in_paper": "First Author"
+    },
+    {
+      "author_email": "kancharlahemanth89@gmail.com",
+      "paper_id": "ASR-2023-CS-119",
+      "role_in_paper": "Corresponding Author"
+    }
+  ],
+  "documents": [
+    {
+      "id": 101,
+      "paper_id": "ASR-2024-ENG-084",
+      "document_name": "Submission_Confirmation_Receipt_ASR2024.pdf",
+      "document_category": "Proof",
+      "file_size": "420 KB",
+      "uploaded_at": "2024-03-12",
+      "file_url": "https://res.cloudinary.com/demo/image/upload/v1/sample.pdf"
+    },
+    {
+      "id": 102,
+      "paper_id": "ASR-2024-ENG-084",
+      "document_name": "Turnitin_Plagiarism_Report_6_Percent.pdf",
+      "document_category": "Report",
+      "file_size": "1.8 MB",
+      "uploaded_at": "2024-03-10",
+      "file_url": "https://res.cloudinary.com/demo/image/upload/v1/sample.pdf"
+    },
+    {
+      "id": 201,
+      "paper_id": "ASR-2023-CS-119",
+      "document_name": "Official_Acceptance_Letter_IEEE_TIFS.pdf",
+      "document_category": "Acceptance",
+      "file_size": "610 KB",
+      "uploaded_at": "2024-02-18",
+      "file_url": "https://res.cloudinary.com/demo/image/upload/v1/sample.pdf"
+    },
+    {
+      "id": 104,
+      "paper_id": "ASR-2026-695",
+      "document_name": "Acceptance_Letter.png",
+      "document_category": "Acceptance Letter",
+      "file_size": "0.13 MB",
+      "uploaded_at": "2026-11-04",
+      "file_url": "https://res.cloudinary.com/csujnj31/image/upload/v1793794553/asr_papers/ASR-2026-695/zdo5z7kntljk3wtozzad.png",
+      "is_cloudinary": true
+    },
+    {
+      "id": 105,
+      "paper_id": "ASR-2026-695",
+      "document_name": "Reviewer_Scorecard.pdf",
+      "document_category": "Peer Review Proof",
+      "file_size": "0.00 MB",
+      "uploaded_at": "2026-11-04",
+      "file_url": "https://res.cloudinary.com/csujnj31/raw/upload/v1793794566/asr_papers/ASR-2026-695/a9nz41jgjpyrvlcb9try",
+      "is_cloudinary": true
+    },
+    {
+      "id": 106,
+      "paper_id": "ASR-2026-695",
+      "document_name": "hello",
+      "document_category": "Proof",
+      "file_size": "0.40 MB",
+      "uploaded_at": "2026-11-04",
+      "file_url": "https://res.cloudinary.com/csujnj31/image/upload/v1793794689/asr_papers/ASR-2026-695/nj9ryd1brob2rot7ps3p.png",
+      "is_cloudinary": true
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "paper_id": "ASR-2024-ENG-084",
+      "author_email": "kancharlahemanth89@gmail.com",
+      "invoice_number": "INV-ASR-2024-0981",
+      "total_amount": 32000,
+      "amount_paid": 20000,
+      "currency": "INR",
+      "payment_status": "Partial",
+      "payment_method": "NEFT / Net Banking",
+      "transaction_ref": "UTR-HDFC09281982",
+      "due_date": "2024-04-30",
+      "invoice_url": "/invoices/INV-ASR-2024-0981.pdf",
+      "receipt_url": "/receipts/REC-ASR-2024-0981.pdf",
+      "transactions": [
+        {
+          "id": "tx_init_1",
+          "amount": 20000,
+          "method": "NEFT / Net Banking",
+          "transaction_ref": "UTR-HDFC09281982",
+          "timestamp": "2024-03-12T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "paper_id": "ASR-2023-CS-119",
+      "author_email": "kancharlahemanth89@gmail.com",
+      "invoice_number": "INV-ASR-2023-0442",
+      "total_amount": 45000,
+      "amount_paid": 45000,
+      "currency": "INR",
+      "payment_status": "Paid",
+      "payment_method": "UPI / Direct Bank",
+      "transaction_ref": "UTR-SBIN0029381",
+      "due_date": "2023-12-15",
+      "paid_at": "2023-12-12",
+      "invoice_url": "/invoices/INV-ASR-2023-0442.pdf",
+      "receipt_url": "/receipts/REC-ASR-2023-0442.pdf",
+      "transactions": [
+        {
+          "id": "tx_init_2",
+          "amount": 45000,
+          "method": "UPI / Direct Bank",
+          "transaction_ref": "UTR-SBIN0029381",
+          "timestamp": "2023-12-12T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "paper_id": "ASR-2026-695",
+      "author_email": "chinnakancharla1@gmail.com",
+      "invoice_number": "INV-ASR-2026-8165",
+      "total_amount": 50000,
+      "amount_paid": 5000,
+      "currency": "INR",
+      "payment_status": "Partial",
+      "payment_method": "NEFT / Net Banking",
+      "transaction_ref": "ABC",
+      "due_date": "2026-12-04",
+      "paid_at": null,
+      "invoice_url": "/invoices/ASR-2026-695-invoice.pdf",
+      "receipt_url": "/receipts/ASR-2026-695-receipt.pdf",
+      "transactions": [
+        {
+          "id": "tx_init_hiii",
+          "amount": 5000,
+          "method": "NEFT / Net Banking",
+          "transaction_ref": "ABC",
+          "timestamp": "2026-11-04T12:01:47.955Z"
+        }
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "id": 4,
+      "recipient_email": "chinnakancharla1@gmail.com",
+      "paper_id": "ASR-2026-695",
+      "title": "Status Updated: Manuscript Preparation",
+      "message": "Your manuscript \"HIII\" progressed to Stage 2: Manuscript Preparation.",
+      "category": "review",
+      "is_read": false,
+      "created_at": "2026-11-04T12:27:26.469Z"
+    },
+    {
+      "id": 1,
+      "recipient_email": "kancharlahemanth89@gmail.com",
+      "paper_id": "ASR-2024-ENG-084",
+      "title": "Peer Review Round 1 Underway",
+      "message": "Your manuscript \"Adaptive MPPT for Hybrid Solar-Wind Microgrid Systems\" is assigned to 3 expert reviewers in Elsevier ECM.",
+      "category": "review",
+      "is_read": false,
+      "created_at": "2026-11-04T08:01:47.955Z"
+    },
+    {
+      "id": 2,
+      "recipient_email": "kancharlahemanth89@gmail.com",
+      "paper_id": "ASR-2023-CS-119",
+      "title": "Formal Acceptance Proof Available",
+      "message": "Official publication acceptance letter for \"Optimized Graph Neural Networks\" has been uploaded to your Document Download Centre.",
+      "category": "acceptance",
+      "is_read": false,
+      "created_at": "2026-11-02T12:01:47.955Z"
+    },
+    {
+      "id": 3,
+      "recipient_email": "chinnakancharla1@gmail.com",
+      "paper_id": "ASR-2026-695",
+      "title": "Manuscript Successfully Registered",
+      "message": "Your manuscript \"HIII\" has been registered with Tracking ID: ASR-2026-695. Invoice generated: Total ₹50,000, Paid ₹5,000.",
+      "category": "system",
+      "is_read": false,
+      "created_at": "2026-11-04T12:01:47.955Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": 1,
+      "author_email": "admin@asracademicresearch.com",
+      "action": "SYSTEM_BOOT",
+      "details": "Admin user and editorial coordinators initialized successfully.",
+      "created_at": "2026-11-04T12:01:47.955Z"
+    },
+    {
+      "id": 2,
+      "author_email": "admin@asar.org",
+      "action": "DOCUMENT_UPLOAD",
+      "details": "Uploaded Acceptance_Letter.png to Cloudinary for ASR-2026-695",
+      "created_at": "2026-11-04T12:15:53.407Z"
+    },
+    {
+      "id": 3,
+      "author_email": "admin@asar.org",
+      "action": "DOCUMENT_UPLOAD",
+      "details": "Uploaded Reviewer_Scorecard.pdf to Cloudinary for ASR-2026-695",
+      "created_at": "2026-11-04T12:16:07.011Z"
+    },
+    {
+      "id": 4,
+      "author_email": "admin@asracademicresearch.com",
+      "action": "DOCUMENT_UPLOAD",
+      "details": "Uploaded hello to Cloudinary for ASR-2026-695",
+      "created_at": "2026-11-04T12:18:10.405Z"
+    }
+  ]
+}

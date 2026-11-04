@@ -1,0 +1,434 @@
+/* Premium Unified Community Pages Design System (Aligned with Services.css & Membership.css) */
+@import '../styles/Pages.css';
+
+.comm-page {
+  background: #f8fafc;
+}
+
+/* 1. Hero Showcase Section */
+.comm-hero-showcase {
+  background: radial-gradient(circle at 50% 20%, #1e40af 0%, #0b192e 85%);
+  color: #ffffff;
+  padding: 85px 0 75px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.comm-hero-glow {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.comm-hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.comm-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #93c5fd;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+}
+
+.comm-hero-badge svg {
+  color: #60a5fa;
+}
+
+.comm-hero-heading {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.comm-hero-heading .hero-text-accent {
+  background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.comm-hero-sub {
+  font-size: 17px;
+  color: #cbd5e1;
+  line-height: 1.68;
+  max-width: 780px;
+  margin: 0 auto 36px;
+}
+
+/* Hero Metrics Bar */
+.comm-hero-metrics {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  gap: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.comm-metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comm-metric-item .metric-val {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.comm-metric-item .metric-lbl {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.comm-metric-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 2. Overview Banner Card */
+.comm-overview-section {
+  padding: 60px 0 30px;
+  background: #f8fafc;
+}
+
+.comm-overview-card {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 48px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.comm-card-accent-line {
+  position: absolute;
+  top: 0;
+  left: 48px;
+  width: 70px;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 0 0 4px 4px;
+}
+
+.comm-overview-card h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #0b1a30;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.comm-overview-card p {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* 3. Responsibilities & Opportunities Grid */
+.comm-features-section {
+  padding: 60px 0 80px;
+  background: #f8fafc;
+}
+
+.comm-section-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.comm-section-pretitle {
+  display: inline-block;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.comm-section-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: #0b1a30;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.comm-section-desc {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.62;
+  margin: 0 auto;
+}
+
+.comm-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.comm-feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.comm-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px -6px rgba(37, 99, 235, 0.12);
+  border-color: #bfdbfe;
+}
+
+.comm-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.comm-feature-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0b1a30;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.comm-feature-card p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* 4. Pillars & Eligibility 3-Column Split */
+.comm-pillars-section {
+  padding: 85px 0 95px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.comm-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: stretch;
+}
+
+.comm-pillar-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.comm-pillar-card:hover {
+  background: #ffffff;
+  border-color: #bfdbfe;
+  box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+}
+
+.comm-pillar-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #0b1a30;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.comm-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comm-list-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #334155;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.comm-check-bullet {
+  color: #2563eb;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 5. Callout Banner (Why choose ASR / Highlights) */
+.comm-callout-banner {
+  max-width: 1280px;
+  margin: 0 auto 50px;
+  padding: 34px 40px;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
+}
+
+.comm-callout-banner h4 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.comm-callout-banner p {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* 6. Action Callout Buttons */
+.comm-cta-btn-wrap {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-comm-primary {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+  transition: all 0.2s ease;
+}
+
+.btn-comm-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.38);
+  color: #ffffff;
+}
+
+.btn-comm-outline {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-comm-outline:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .comm-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comm-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .comm-hero-heading {
+    font-size: 32px;
+  }
+  .comm-hero-metrics {
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .comm-metric-divider {
+    display: none;
+  }
+  .comm-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .comm-overview-card {
+    padding: 28px 20px;
+  }
+}

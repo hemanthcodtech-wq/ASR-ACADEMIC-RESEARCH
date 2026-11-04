@@ -1,0 +1,221 @@
+/* Research Publication Support Service Details Page */
+@import '../styles/Pages.css';
+
+.pub-hero-section {
+  background: linear-gradient(135deg, #0b1a30 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 60px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pub-hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pub-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-bottom: 16px;
+}
+
+.pub-hero-section h1 {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.pub-subheading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 16px;
+}
+
+.pub-hero-desc {
+  font-size: 16.5px;
+  color: #cbd5e1;
+  line-height: 1.65;
+  max-width: 920px;
+}
+
+/* Service Overview Card */
+.pub-overview-section {
+  padding: 60px 0 40px;
+  background: #ffffff;
+}
+
+.pub-overview-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #f8fafc;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+}
+
+.pub-overview-card h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.pub-overview-card p {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* 10 Detailed Pillars Grid */
+.pub-features-section {
+  padding: 60px 0 80px;
+  background: #f8fafc;
+}
+
+.pub-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pub-feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pub-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.07);
+  border-color: #93c5fd;
+}
+
+.pub-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.pub-feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.pub-feature-card p {
+  font-size: 14.5px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Who Can Benefit Section */
+.who-benefit-section {
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.benefit-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.benefit-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 0.2s ease;
+}
+
+.benefit-card:hover {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+}
+
+.benefit-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.benefit-card p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Inline Contact Form Block on Service Page */
+.service-contact-block {
+  padding: 70px 0 90px;
+  background: #f1f5f9;
+}
+
+@media (max-width: 1024px) {
+  .pub-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .benefit-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pub-hero-section h1 {
+    font-size: 32px;
+  }
+  .benefit-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

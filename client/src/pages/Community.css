@@ -1,0 +1,15 @@
+/* Community Page Styles */
+@import '../styles/Pages.css';
+
+.community-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .community-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
