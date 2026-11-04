@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PortalLayout from '../portal/PortalLayout';
-import { api } from '../portal/apiService';
+import { api, API_BASE } from '../portal/apiService';
 import {
   BellRing,
   Mail,
@@ -57,7 +57,7 @@ const NotificationsPage = () => {
   const handleMarkAllRead = async () => {
     const token = getAuthToken();
     if (token) {
-      await fetch('http://localhost:5000/api/notifications/mark-all-read', {
+      await fetch(`${API_BASE}/notifications/mark-all-read`, {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${token}` }
       });

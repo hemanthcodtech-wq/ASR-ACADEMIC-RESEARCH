@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AdminLayout from './AdminLayout';
-import { api } from '../portal/apiService';
+import { api, API_BASE } from '../portal/apiService';
 import { Upload, FileText, CheckCircle, AlertCircle, Cloud, Download, ExternalLink, Shield, Search, Filter } from 'lucide-react';
 
 const AdminProofs = () => {
@@ -86,7 +86,7 @@ const AdminProofs = () => {
       const headers = {};
       headers['Authorization'] = `Bearer ${token || 'default_admin_token'}`;
 
-      const res = await fetch('http://localhost:5000/api/documents/upload', {
+      const res = await fetch(`${API_BASE}/documents/upload`, {
         method: 'POST',
         headers,
         body: formData

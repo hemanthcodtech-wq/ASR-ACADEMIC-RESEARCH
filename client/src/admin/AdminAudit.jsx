@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AdminLayout from './AdminLayout';
-import { api } from '../portal/apiService';
+import { api, API_BASE } from '../portal/apiService';
 import { ShieldCheck, Search, Clock, UserCheck, AlertTriangle } from 'lucide-react';
 
 const AdminAudit = () => {
@@ -19,7 +19,7 @@ const AdminAudit = () => {
   useEffect(() => {
     const token = getAuthToken();
     if (token) {
-      fetch('http://localhost:5000/api/staff/audit-logs', {
+      fetch(`${API_BASE}/staff/audit-logs`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(r => r.json())
