@@ -129,6 +129,7 @@ router.post('/register', authenticateToken, async (req, res) => {
     };
 
     db.store.papers.unshift(newPaper);
+    await db.savePaper(newPaper);
     
     // Map paper to the designated author email
     db.store.authorPaperMapping.push({
@@ -136,6 +137,9 @@ router.post('/register', authenticateToken, async (req, res) => {
       paper_id: newId,
       role_in_paper: 'First Author'
     });
+    if (db.isNeonConnected()) {
+      db.query(`INSERT INTO author_paper_mapping (author_email, paper_id, role_in_paper) VALUES ($1, $2, $3) ON CONFLICT DO NOTHING`, [authorTargetEmail, newId, 'First Author']).catch(console.error);
+    }
 
     // If payment fields provided during intake, create initial payment record in DB immediately!
     const parsedTotal = Number(total_amount) || 0;
@@ -171,11 +175,12 @@ router.post('/register', authenticateToken, async (req, res) => {
       };
 
       db.store.payments.push(paymentRecord);
+      await db.savePayment(paymentRecord);
       newPaper.payment = paymentRecord;
     }
 
     // Create confirmation notification for the author
-    db.store.notifications.unshift({
+    const notif = {
       id: db.store.notifications.length + 1,
       recipient_email: authorTargetEmail,
       paper_id: newId,
@@ -184,16 +189,20 @@ router.post('/register', authenticateToken, async (req, res) => {
       category: 'system',
       is_read: false,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.notifications.unshift(notif);
+    await db.saveNotification(notif);
 
     // Audit log
-    db.store.auditLogs.unshift({
+    const auditEntry = {
       id: db.store.auditLogs.length + 1,
       author_email: req.user.email,
       action: 'PAPER_REGISTERED',
       details: `Registered ${newId} for author ${authorTargetEmail}. Fee: ₹${parsedTotal}, Paid: ₹${parsedPaid}`,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.auditLogs.unshift(auditEntry);
+    await db.saveAuditLog(auditEntry);
 
     return res.status(201).json({
       success: true,
@@ -221,9 +230,10 @@ router.patch('/:id/status', authenticateToken, async (req, res) => {
     if (status) paper.status = status;
     if (stage_number !== undefined) paper.stage_number = Number(stage_number);
     if (next_step_action) paper.next_step_action = next_step_action;
+    await db.savePaper(paper);
 
     // Send automatic update notification
-    db.store.notifications.unshift({
+    const updateNotif = {
       id: db.store.notifications.length + 1,
       recipient_email: paper.primary_author_email,
       paper_id: paper.id,
@@ -232,7 +242,9 @@ router.patch('/:id/status', authenticateToken, async (req, res) => {
       category: 'review',
       is_read: false,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.notifications.unshift(updateNotif);
+    await db.saveNotification(updateNotif);
 
     return res.json({
       success: true,

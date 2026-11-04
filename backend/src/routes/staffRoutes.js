@@ -469,10 +469,13 @@ router.patch('/payments/:id/status', authenticateToken, async (req, res) => {
     const paper = db.store.papers.find(p => p.id === payment.paper_id);
     if (paper) {
       paper.payment = payment;
+      paper.paid_amount = payment.amount_paid;
+      await db.savePaper(paper);
     }
+    await db.savePayment(payment);
 
     // Notify author of payment update
-    db.store.notifications.unshift({
+    const notifObj = {
       id: db.store.notifications.length + 1,
       recipient_email: payment.author_email,
       paper_id: payment.paper_id,
@@ -481,16 +484,20 @@ router.patch('/payments/:id/status', authenticateToken, async (req, res) => {
       category: 'payment',
       is_read: false,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.notifications.unshift(notifObj);
+    await db.saveNotification(notifObj);
 
     // Audit log
-    db.store.auditLogs.unshift({
+    const auditObj = {
       id: db.store.auditLogs.length + 1,
       author_email: req.user.email,
       action: 'PAYMENT_STATUS_UPDATED',
       details: `Payment for invoice ${payment.invoice_number} updated: Paid ₹${payment.amount_paid} of ₹${payment.total_amount} (${payment.payment_status})`,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.auditLogs.unshift(auditObj);
+    await db.saveAuditLog(auditObj);
 
     return res.json({
       success: true,

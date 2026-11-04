@@ -163,15 +163,17 @@ router.post('/upload', authenticateToken, upload.single('file'), async (req, res
     };
 
     db.store.documents.push(newDoc);
+    await db.saveDocument(newDoc);
 
-    // Audit log
-    db.store.auditLogs.push({
+    const logEntry = {
       id: db.store.auditLogs.length + 1,
       author_email: req.user.email,
       action: 'DOCUMENT_UPLOAD',
       details: `Uploaded ${docName} to Cloudinary for ${paper_id}`,
       created_at: new Date().toISOString()
-    });
+    };
+    db.store.auditLogs.push(logEntry);
+    await db.saveAuditLog(logEntry);
 
     return res.status(201).json({
       success: true,
