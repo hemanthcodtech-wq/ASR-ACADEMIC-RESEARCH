@@ -503,7 +503,22 @@ router.patch('/payments/:id/status', authenticateToken, async (req, res) => {
 });
 
 // =========================================================================
-// 5. AUDIT LOGS
+// 5. ALL DOCUMENTS (Admin view)
+// =========================================================================
+router.get('/documents', authenticateToken, async (req, res) => {
+  try {
+    return res.json({
+      success: true,
+      count: db.store.documents.length,
+      documents: db.store.documents
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Failed to retrieve documents.' });
+  }
+});
+
+// =========================================================================
+// 6. AUDIT LOGS
 // =========================================================================
 router.get('/audit-logs', authenticateToken, async (req, res) => {
   try {

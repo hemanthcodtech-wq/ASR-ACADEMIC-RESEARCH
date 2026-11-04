@@ -60,6 +60,17 @@ export const api = {
     }
   },
 
+  async getAllDocumentsForAdmin(token) {
+    try {
+      const res = await fetch(`${API_BASE}/staff/documents`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  },
+
   async getAllPapersForAdmin(token) {
     try {
       const res = await fetch(`${API_BASE}/staff/papers`, {

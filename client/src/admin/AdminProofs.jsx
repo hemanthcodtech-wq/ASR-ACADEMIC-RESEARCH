@@ -42,7 +42,7 @@ const AdminProofs = () => {
         }
       }
     });
-    api.getDocuments(token).then(r => {
+    api.getAllDocumentsForAdmin(token).then(r => {
       if (r && r.documents) setDocuments(r.documents);
     });
   };
