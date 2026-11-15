@@ -25,8 +25,8 @@ export const api = {
       });
       return await res.json();
     } catch (e) {
-      console.warn('API error, using fallback:', e);
-      return { success: true, message: `Passcode sent to ${email}`, debug_otp: '123456' };
+      console.warn('API error sending OTP:', e);
+      return { success: false, message: 'Server communication error while dispatching OTP.' };
     }
   },
 
@@ -39,11 +39,10 @@ export const api = {
       });
       return await res.json();
     } catch (e) {
-      console.warn('API error, using local fallback:', e);
+      console.warn('API error verifying OTP:', e);
       return {
-        success: true,
-        token: 'mock_jwt_token',
-        user: { email, fullName: email.split('@')[0].toUpperCase(), role: 'author' }
+        success: false,
+        message: 'Network error. Please check your connection and retry.'
       };
     }
   },
@@ -95,6 +94,22 @@ export const api = {
       return await res.json();
     } catch (e) {
       return { success: false, message: 'Server communication error.' };
+    }
+  },
+
+  async bulkUploadPapers(token, payload) {
+    try {
+      const res = await fetch(`${API_BASE}/papers/bulk-upload`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(payload)
+      });
+      return await res.json();
+    } catch (e) {
+      return { success: false, message: 'Server communication error during bulk upload.' };
     }
   },
 

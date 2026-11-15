@@ -87,7 +87,7 @@ const AdminLayout = ({ children, activeNav, title, subtitle }) => {
             <Link to="/admin/overview" className="portal-logo-link">
               <span className="portal-tag-badge" style={{ background: '#dc2626', color: '#fff' }}>ADMIN PANEL</span>
               <span className="portal-sep">/</span>
-              <span className="portal-sub-brand">ASR Editorial Control Suite</span>
+              <span className="portal-sub-brand">ASR ManuTrack Control</span>
             </Link>
           </div>
 

@@ -61,9 +61,6 @@ const Login = () => {
     if (result && result.success) {
       setStep(2);
       setResendTimer(45);
-      if (result.debug_otp) {
-        console.log('Backend Generated 2FA OTP:', result.debug_otp);
-      }
     } else {
       setErrorMsg(result?.message || 'Failed to dispatch verification code. Please retry.');
     }
@@ -170,7 +167,7 @@ const Login = () => {
           </div>
 
           <h1 className="auth-hero-title">
-            ASR Author <span className="auth-highlight">Tracking Portal</span>
+            <span className="auth-highlight">ASR ManuTrack</span> Portal
           </h1>
 
           <p className="auth-hero-subtitle">
@@ -185,44 +182,56 @@ const Login = () => {
           
           {/* Left Column: Interactive Form */}
           <div className="auth-form-card">
-            <div className="portal-branding-strip" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span className="brand-dot"></span>
-                <span className="brand-subtext">Author Access &amp; Authentication</span>
-              </div>
-              <div style={{ display: 'flex', gap: '6px' }}>
+            <div className="portal-branding-strip" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '22px', flexWrap: 'wrap', gap: '12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', padding: '5px 8px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
                 <button
                   type="button"
                   onClick={() => { setLoginMode('otp'); setErrorMsg(''); }}
                   style={{
-                    fontSize: '11.5px',
-                    fontWeight: 700,
-                    padding: '3px 8px',
-                    borderRadius: '5px',
-                    border: '1px solid #cbd5e1',
-                    background: loginMode === 'otp' ? '#2563eb' : '#fff',
-                    color: loginMode === 'otp' ? '#fff' : '#64748b',
-                    cursor: 'pointer'
+                    fontSize: '15px',
+                    fontWeight: 800,
+                    padding: '8px 18px',
+                    borderRadius: '9px',
+                    border: 'none',
+                    background: loginMode === 'otp' ? '#1d4ed8' : 'transparent',
+                    color: loginMode === 'otp' ? '#ffffff' : '#475569',
+                    cursor: 'pointer',
+                    boxShadow: loginMode === 'otp' ? '0 3px 10px rgba(29, 78, 216, 0.3)' : 'none',
+                    transition: 'all 0.2s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
                   }}
                 >
-                  Author 2FA
+                  <span>Author Login</span>
                 </button>
+                <span style={{ color: '#cbd5e1', fontWeight: 600, fontSize: '15px', userSelect: 'none' }}>|</span>
                 <button
                   type="button"
                   onClick={() => { setLoginMode('admin'); setErrorMsg(''); }}
                   style={{
-                    fontSize: '11.5px',
-                    fontWeight: 700,
-                    padding: '3px 8px',
-                    borderRadius: '5px',
-                    border: '1px solid #cbd5e1',
-                    background: loginMode === 'admin' ? '#0f172a' : '#fff',
-                    color: loginMode === 'admin' ? '#fff' : '#64748b',
-                    cursor: 'pointer'
+                    fontSize: '15px',
+                    fontWeight: 800,
+                    padding: '8px 18px',
+                    borderRadius: '9px',
+                    border: 'none',
+                    background: loginMode === 'admin' ? '#0f172a' : 'transparent',
+                    color: loginMode === 'admin' ? '#ffffff' : '#475569',
+                    cursor: 'pointer',
+                    boxShadow: loginMode === 'admin' ? '0 3px 10px rgba(15, 23, 42, 0.3)' : 'none',
+                    transition: 'all 0.2s ease',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
                   }}
                 >
-                  Admin Login
+                  <span>Admin Login</span>
                 </button>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span className="brand-dot"></span>
+                <span className="brand-subtext">{loginMode === 'otp' ? 'Author Access' : 'Editorial Control'}</span>
               </div>
             </div>
 
@@ -336,11 +345,6 @@ const Login = () => {
                       </>
                     )}
                   </button>
-
-                  <div className="auth-quick-hint">
-                    <HelpCircle size={15} />
-                    <span>Demo mode enabled: Any valid email sends demo OTP `123456`.</span>
-                  </div>
                 </form>
               </>
             ) : (

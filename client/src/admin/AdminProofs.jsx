@@ -12,7 +12,7 @@ const AdminProofs = () => {
   const [papers, setPapers] = useState([]);
   const [documents, setDocuments] = useState([]);
   const [selectedPaperId, setSelectedPaperId] = useState(initialPaperId);
-  const [category, setCategory] = useState('Proof');
+  const [category, setCategory] = useState('Submission Confirmation Proof');
   const [customName, setCustomName] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -257,12 +257,10 @@ const AdminProofs = () => {
                   onChange={e => setCategory(e.target.value)}
                   style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid #cbd5e1', fontSize: '13.5px', background: '#fff' }}
                 >
-                  <option value="Proof">Submission Confirmation Proof</option>
-                  <option value="Acceptance">Official Acceptance Letter</option>
-                  <option value="Report">Turnitin Plagiarism Similarity Report</option>
-                  <option value="Manuscript">Submitted Manuscript Copy (Blind)</option>
-                  <option value="Invoice">Payment Receipt / GST Invoice</option>
-                  <option value="Certificate">Editorial Publication Certificate</option>
+                  <option value="Submission Confirmation Proof">1. Submission Confirmation Proof</option>
+                  <option value="Revision Proof">2. Revision Proof</option>
+                  <option value="Acceptance Proof">3. Acceptance Proof</option>
+                  <option value="Publication Proof (PDF)">4. Publication Proof (PDF)</option>
                 </select>
               </div>
 

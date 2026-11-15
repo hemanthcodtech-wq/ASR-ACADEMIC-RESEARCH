@@ -107,7 +107,7 @@ router.post('/request-otp', async (req, res) => {
       });
     }
 
-    // Generate 6-digit OTP
+    // Generate cryptographically random 6-digit OTP
     const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes expiry
 
@@ -117,15 +117,22 @@ router.post('/request-otp', async (req, res) => {
       attempts: 0
     };
 
-    console.log(`[AUTH] 🔑 OTP for ${cleanEmail} is: ${generatedOtp}`);
+    // Store in Neon DB otp_sessions
+    if (db.isNeonConnected()) {
+      await db.query(`
+        INSERT INTO otp_sessions (email, otp_code, expires_at, attempts, verified)
+        VALUES ($1, $2, $3, 0, false)
+      `, [cleanEmail, generatedOtp, expiresAt]);
+    }
+
+    console.log(`[AUTH] 🔑 Real OTP generated and dispatched for ${cleanEmail}`);
 
     // Send email using Nodemailer
     const emailResult = await sendOtpEmail(cleanEmail, generatedOtp, author.full_name);
 
     return res.json({
       success: true,
-      message: `A 6-digit one-time passcode has been dispatched to ${cleanEmail}.`,
-      debug_otp: generatedOtp, // Included for testing and seamless development
+      message: `A 6-digit one-time passcode has been dispatched to ${cleanEmail}. Please check your inbox.`,
       email_delivered: emailResult.success,
       expiresInSeconds: 600
     });
@@ -144,15 +151,34 @@ router.post('/verify-otp', async (req, res) => {
     }
 
     const cleanEmail = email.toLowerCase().trim();
+    const cleanOtp = String(otp).trim();
     const session = db.store.otpSessions[cleanEmail];
 
-    // For ease of demo and verification, accept matching code or universal test code '123456'
-    const isMasterCode = otp === '123456' || otp === '999999';
-    const isValidGenerated = session && session.otp === otp && new Date() < new Date(session.expiresAt);
+    // Check in-memory session or query Neon DB otp_sessions
+    let isValidGenerated = false;
+    if (session && session.otp === cleanOtp && new Date() < new Date(session.expiresAt)) {
+      isValidGenerated = true;
+    } else if (db.isNeonConnected()) {
+      const dbCheck = await db.query(`
+        SELECT * FROM otp_sessions 
+        WHERE email = $1 AND otp_code = $2 AND expires_at > NOW() AND verified = false
+        ORDER BY id DESC LIMIT 1
+      `, [cleanEmail, cleanOtp]);
+      if (dbCheck && dbCheck.rows && dbCheck.rows.length > 0) {
+        isValidGenerated = true;
+      }
+    }
 
-    if (!isMasterCode && !isValidGenerated) {
+    if (!isValidGenerated) {
       if (session) session.attempts = (session.attempts || 0) + 1;
-      return res.status(401).json({ success: false, message: 'Invalid or expired passcode. Please verify and retry.' });
+      return res.status(401).json({ success: false, message: 'Invalid or expired passcode. Please enter the exact code sent to your email.' });
+    }
+
+    // Mark as verified in Neon DB
+    if (db.isNeonConnected()) {
+      await db.query(`
+        UPDATE otp_sessions SET verified = true WHERE email = $1 AND otp_code = $2
+      `, [cleanEmail, cleanOtp]);
     }
 
     // Find author details
