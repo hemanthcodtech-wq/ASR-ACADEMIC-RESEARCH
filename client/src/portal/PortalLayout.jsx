@@ -69,7 +69,7 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
             <Link to="/author-dashboard" className="portal-logo-link">
               <span className="portal-tag-badge">ASR PORTAL</span>
               <span className="portal-sep">/</span>
-              <span className="portal-sub-brand">Author Tracking Suite</span>
+              <span className="portal-sub-brand">Manuscript Tracking Suite</span>
             </Link>
           </div>
 
