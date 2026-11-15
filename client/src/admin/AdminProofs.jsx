@@ -378,7 +378,7 @@ const AdminProofs = () => {
                         {doc.document_name}
                       </div>
                       <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '2px' }}>
-                        {doc.file_size || '1.5 MB'} • Uploaded {doc.uploaded_at || 'Recently'}
+                        {doc.file_size || '1.5 MB'} • Uploaded {(doc.uploaded_at || 'Recently').split('T')[0]}
                       </div>
                     </div>
 

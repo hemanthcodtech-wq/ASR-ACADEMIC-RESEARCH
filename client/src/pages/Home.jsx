@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PartnerCarousel from '../components/PartnerCarousel';
 import IsoCertification from '../components/IsoCertification';
+import ScrollReveal from '../components/ScrollReveal';
 import aboutCollabImg from '../assets/about-collaboration.jpg';
 import {
   Award,
@@ -83,170 +84,177 @@ const Home = () => {
       <PartnerCarousel />
 
       {/* 2. STATS & CREDENTIALS BAR */}
-      <section className="stats-bar-section">
-        <div className="stats-grid">
-          <div className="stat-item">
-            <Clock size={28} className="stat-icon" />
-            <div className="stat-content">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Years Exp.</span>
+      <ScrollReveal direction="up" delay={0.1}>
+        <section className="stats-bar-section">
+          <div className="stats-grid">
+            <div className="stat-item">
+              <Clock size={28} className="stat-icon" />
+              <div className="stat-content">
+                <span className="stat-number">15+</span>
+                <span className="stat-label">Years Exp.</span>
+              </div>
+            </div>
+
+            <div className="stat-item">
+              <Users size={28} className="stat-icon" />
+              <div className="stat-content">
+                <span className="stat-number">2,000+</span>
+                <span className="stat-label">Clients</span>
+              </div>
+            </div>
+
+            <div className="stat-item">
+              <Globe size={28} className="stat-icon" />
+              <div className="stat-content">
+                <span className="stat-number">50+</span>
+                <span className="stat-label">Countries</span>
+              </div>
+            </div>
+
+            <div className="stat-item">
+              <BookOpen size={28} className="stat-icon" />
+              <div className="stat-content">
+                <span className="stat-number">5,000+</span>
+                <span className="stat-label">Publications</span>
+              </div>
+            </div>
+
+            <div className="stat-item">
+              <ShieldCheck size={28} className="stat-icon" />
+              <div className="stat-content">
+                <span className="stat-number">100%</span>
+                <span className="stat-label">Ethical</span>
+              </div>
             </div>
           </div>
 
-          <div className="stat-item">
-            <Users size={28} className="stat-icon" />
-            <div className="stat-content">
-              <span className="stat-number">2,000+</span>
-              <span className="stat-label">Clients</span>
-            </div>
+          <div className="stats-subbar">
+            <span className="subbar-badge">24/7 Assistance</span>
+            <span className="subbar-badge">MSME Registered</span>
+            <span className="subbar-badge">PhD Expert Team</span>
+            <span className="subbar-badge">Scopus & SCI Support</span>
+            <span className="subbar-badge">Quality Certification</span>
           </div>
-
-          <div className="stat-item">
-            <Globe size={28} className="stat-icon" />
-            <div className="stat-content">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Countries</span>
-            </div>
-          </div>
-
-          <div className="stat-item">
-            <BookOpen size={28} className="stat-icon" />
-            <div className="stat-content">
-              <span className="stat-number">5,000+</span>
-              <span className="stat-label">Publications</span>
-            </div>
-          </div>
-
-          <div className="stat-item">
-            <ShieldCheck size={28} className="stat-icon" />
-            <div className="stat-content">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Ethical</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="stats-subbar">
-          <span className="subbar-badge">24/7 Assistance</span>
-          <span className="subbar-badge">MSME Registered</span>
-          <span className="subbar-badge">PhD Expert Team</span>
-          <span className="subbar-badge">Scopus & SCI Support</span>
-          <span className="subbar-badge">Quality Certification</span>
-        </div>
-      </section>
-
+        </section>
+      </ScrollReveal>
 
       {/* 3. ISO 9001:2015 QUALITY CERTIFICATION (Matching Reference Screenshot) */}
-      <IsoCertification />
+      <ScrollReveal direction="up" delay={0.15}>
+        <IsoCertification />
+      </ScrollReveal>
 
       {/* 4. VISION & MISSION */}
-      <section className="section-wrapper vision-mission-section">
-        <div className="section-container">
-          <div className="section-header">
-            <span className="section-pretitle">QUALITY-DRIVEN FOUNDATION</span>
-            <h2 className="section-title">Vision & Mission</h2>
-            <p className="section-desc">
-              Guiding principles that drive research innovation and academic excellence worldwide.
-            </p>
-          </div>
-
-          <div className="vm-cards-grid">
-            {/* Vision */}
-            <div className="vm-card">
-              <div className="vm-card-header">
-                <div className="vm-icon-box">
-                  <Target size={26} />
-                </div>
-                <h3>Vision</h3>
-              </div>
-              <p>
-                To become a globally recognized leader in academic research, innovation support, and knowledge services by empowering students, researchers, and institutions to achieve excellence, create impact, and contribute to society through high-quality research and innovation.
+      <ScrollReveal direction="up" delay={0.1}>
+        <section className="section-wrapper vision-mission-section">
+          <div className="section-container">
+            <div className="section-header">
+              <span className="section-pretitle">QUALITY-DRIVEN FOUNDATION</span>
+              <h2 className="section-title">Vision & Mission</h2>
+              <p className="section-desc">
+                Guiding principles that drive research innovation and academic excellence worldwide.
               </p>
             </div>
 
-            {/* Mission */}
-            <div className="vm-card">
-              <div className="vm-card-header">
-                <div className="vm-icon-box">
-                  <TrendingUp size={26} />
+            <div className="vm-cards-grid">
+              {/* Vision */}
+              <div className="vm-card">
+                <div className="vm-card-header">
+                  <div className="vm-icon-box">
+                    <Target size={26} />
+                  </div>
+                  <h3>Vision</h3>
                 </div>
-                <h3>Mission</h3>
+                <p>
+                  To become a globally recognized leader in academic research, innovation support, and knowledge services by empowering students, researchers, and institutions to achieve excellence, create impact, and contribute to society through high-quality research and innovation.
+                </p>
               </div>
-              <p>
-                At ASR Academic Research Solutions, our mission is to deliver reliable, ethical, and high-quality academic and research services that support every stage of the research ecosystem:
-              </p>
-              <ul className="mission-checklist">
-                <li>
-                  <CheckCircle size={16} className="check-icon" />
-                  <span>Provide end-to-end support for PhD scholars, researchers, and academic institutions</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="check-icon" />
-                  <span>Ensure quality-driven research, publication, and thesis development services aligned with international standards</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="check-icon" />
-                  <span>Facilitate innovation through patent support, intellectual property services, and startup guidance</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="check-icon" />
-                  <span>Promote strong academic collaborations and knowledge-sharing platforms</span>
-                </li>
-                <li>
-                  <CheckCircle size={16} className="check-icon" />
-                  <span>Continuously improve our processes in line with ISO 9001:2015 standards to ensure consistency, transparency, and client satisfaction</span>
-                </li>
-              </ul>
+
+              {/* Mission */}
+              <div className="vm-card">
+                <div className="vm-card-header">
+                  <div className="vm-icon-box">
+                    <TrendingUp size={26} />
+                  </div>
+                  <h3>Mission</h3>
+                </div>
+                <p>
+                  At ASR Academic Research Solutions, our mission is to deliver reliable, ethical, and high-quality academic and research services that support every stage of the research ecosystem:
+                </p>
+                <ul className="mission-checklist">
+                  <li>
+                    <CheckCircle size={16} className="check-icon" />
+                    <span>Provide end-to-end support for PhD scholars, researchers, and academic institutions</span>
+                  </li>
+                  <li>
+                    <CheckCircle size={16} className="check-icon" />
+                    <span>Ensure quality-driven research, publication, and thesis development services aligned with international standards</span>
+                  </li>
+                  <li>
+                    <CheckCircle size={16} className="check-icon" />
+                    <span>Facilitate innovation through patent support, intellectual property services, and startup guidance</span>
+                  </li>
+                  <li>
+                    <CheckCircle size={16} className="check-icon" />
+                    <span>Promote strong academic collaborations and knowledge-sharing platforms</span>
+                  </li>
+                  <li>
+                    <CheckCircle size={16} className="check-icon" />
+                    <span>Continuously improve our processes in line with ISO 9001:2015 standards to ensure consistency, transparency, and client satisfaction</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* 5. ABOUT PREVIEW (Matching Reference Design) */}
-      <section className="section-wrapper about-preview-section">
-        <div className="section-container">
-          <div className="about-preview-grid">
-            <div className="about-preview-left">
-              <span className="about-pretitle-pill">ABOUT ASR RESEARCH SOLUTIONS</span>
-              <h2 className="about-preview-heading">
-                Empowering Research.<br />
-                Enabling <span className="text-highlight">Global Success.</span>
-              </h2>
-              <p className="about-preview-description">
-                ASR Academic Research Solutions is a premier MSME-registered organization under the Government of India with over 15 years of excellence in academic consultancy. We guide Ph.D. scholars, researchers, and faculty members through every step of their academic journey with integrity and global standards.
-              </p>
+      <ScrollReveal direction="up" delay={0.1}>
+        <section className="section-wrapper about-preview-section">
+          <div className="section-container">
+            <div className="about-preview-grid">
+              <div className="about-preview-left">
+                <span className="about-pretitle-pill">ABOUT ASR RESEARCH SOLUTIONS</span>
+                <h2 className="about-preview-heading">
+                  Empowering Research.<br />
+                  Enabling <span className="text-highlight">Global Success.</span>
+                </h2>
+                <p className="about-preview-description">
+                  ASR Academic Research Solutions is a premier MSME-registered organization under the Government of India with over 15 years of excellence in academic consultancy. We guide Ph.D. scholars, researchers, and faculty members through every step of their academic journey with integrity and global standards.
+                </p>
 
-              <div className="about-feature-bullets">
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>End-to-End Research Support</span></div>
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Scopus & SCI Publication</span></div>
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Patent & Innovation Filing</span></div>
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Global Academic Network</span></div>
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Confidential & Ethical Services</span></div>
-                <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Expert PhD Mentorship</span></div>
+                <div className="about-feature-bullets">
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>End-to-End Research Support</span></div>
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Scopus & SCI Publication</span></div>
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Patent & Innovation Filing</span></div>
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Global Academic Network</span></div>
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Confidential & Ethical Services</span></div>
+                  <div className="about-bullet"><CheckCircle size={17} className="check-icon-blue" /> <span>Expert PhD Mentorship</span></div>
+                </div>
+
+                <div className="about-btn-group">
+                  <Link to="/services" className="about-btn-primary">
+                    Explore Services
+                  </Link>
+                  <Link to="/contact" className="about-btn-outline">
+                    Free Consultation
+                  </Link>
+                </div>
               </div>
 
-              <div className="about-btn-group">
-                <Link to="/services" className="about-btn-primary">
-                  Explore Services
-                </Link>
-                <Link to="/contact" className="about-btn-outline">
-                  Free Consultation
-                </Link>
-              </div>
-            </div>
-
-            <div className="about-preview-image-box">
-              <div className="about-image-card-frame">
-                <img 
-                  src={aboutCollabImg} 
-                  alt="Scholars collaborating on research" 
-                  className="about-collaboration-img" 
-                />
+              <div className="about-preview-image-box">
+                <div className="about-image-card-frame">
+                  <img 
+                    src={aboutCollabImg} 
+                    alt="Scholars collaborating on research" 
+                    className="about-collaboration-img" 
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* 6. WHY CHOOSE ASR */}
       <section className="section-wrapper why-choose-section">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   FileText,
   Download,
@@ -14,7 +15,7 @@ import {
   ChevronRight,
   Menu,
   X,
-  Settings
+  Sparkles
 } from 'lucide-react';
 import './PortalPages.css';
 
@@ -56,7 +57,7 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
   return (
     <div className="portal-master-container">
       {/* Portal Top Bar */}
-      <header className="portal-top-bar">
+      <header className="portal-top-bar" style={{ backdropFilter: 'blur(10px)' }}>
         <div className="portal-top-bar-inner">
           <div className="portal-branding-zone">
             <button 
@@ -74,27 +75,61 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
           </div>
 
           <div className="portal-user-zone">
-            <div className="portal-user-chip">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="portal-user-chip"
+            >
               <User size={14} className="user-icon-green" />
-              <span className="user-email-text">{user.email || 'kancharlahemanth89@gmail.com'}</span>
-            </div>
+              <span className="user-email-text">{user.email || 'author@university.edu'}</span>
+            </motion.div>
 
-            <button onClick={handleLogout} className="portal-btn-logout" title="Sign out of your session">
+            <motion.button 
+              whileHover={{ scale: 1.04, background: '#fee2e2', color: '#dc2626' }}
+              whileTap={{ scale: 0.96 }}
+              onClick={handleLogout} 
+              className="portal-btn-logout" 
+              title="Sign out of your session"
+            >
               <LogOut size={15} />
               <span>Logout</span>
-            </button>
+            </motion.button>
           </div>
         </div>
       </header>
 
       {/* Main Grid: Sidebar + Viewport */}
       <div className="portal-grid-body">
+        {/* Mobile Backdrop Overlay */}
+        <AnimatePresence>
+          {mobileNavOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileNavOpen(false)}
+              className="portal-sidebar-backdrop"
+              aria-label="Close navigation overlay"
+            />
+          )}
+        </AnimatePresence>
+
         {/* Sidebar Nav */}
         <aside className={`portal-sidebar ${mobileNavOpen ? 'mobile-visible' : ''}`}>
           <div className="portal-sidebar-top">
             <div className="portal-sidebar-header">
               <span className="sidebar-group-title">MY AUTHOR PORTAL</span>
-              <span className="sidebar-count-badge">{navItems.length} Sections</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span className="sidebar-count-badge">{navItems.length} Sections</span>
+                <button
+                  type="button"
+                  className="portal-sidebar-mobile-close"
+                  onClick={() => setMobileNavOpen(false)}
+                  aria-label="Close Sidebar"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             <nav className="portal-nav-list">
@@ -102,24 +137,48 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
                 const Icon = item.icon;
                 const isActive = activeNav === item.id || location.pathname === item.path;
                 return (
-                  <Link
+                  <motion.div
                     key={item.id}
-                    to={item.path}
-                    onClick={() => setMobileNavOpen(false)}
-                    className={`portal-nav-item ${isActive ? 'is-active' : ''}`}
+                    whileHover={{ x: 4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                   >
-                    <Icon size={18} className="nav-item-icon" />
-                    <span className="nav-item-label">{item.label}</span>
-                    {item.badge && <span className="nav-item-staff-badge">{item.badge}</span>}
-                    {isActive && <ChevronRight size={15} className="active-arrow" />}
-                  </Link>
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileNavOpen(false)}
+                      className={`portal-nav-item ${isActive ? 'is-active' : ''}`}
+                      style={{ position: 'relative' }}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeAuthorNavPill"
+                          style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            bottom: 0,
+                            width: '4px',
+                            background: '#2563eb',
+                            borderRadius: '0 4px 4px 0'
+                          }}
+                          transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                        />
+                      )}
+                      <Icon size={18} className="nav-item-icon" />
+                      <span className="nav-item-label">{item.label}</span>
+                      {item.badge && <span className="nav-item-staff-badge">{item.badge}</span>}
+                      {isActive && <ChevronRight size={15} className="active-arrow" />}
+                    </Link>
+                  </motion.div>
                 );
               })}
             </nav>
           </div>
 
           <div className="portal-sidebar-footer">
-            <div className="portal-sidebar-author-card">
+            <motion.div 
+              whileHover={{ y: -2 }}
+              className="portal-sidebar-author-card"
+            >
               <div className="portal-avatar-circle">
                 {(user.email || 'A').charAt(0).toUpperCase()}
               </div>
@@ -127,7 +186,7 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
                 <span className="portal-avatar-name" title={user.email}>{user.email || 'Author Account'}</span>
                 <span className="portal-avatar-role">Verified Author Session</span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="privacy-badge-box">
               <ShieldCheck size={18} color="#16a34a" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -141,7 +200,12 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
 
         {/* Dynamic Viewport */}
         <main className="portal-viewport">
-          <div className="portal-header-banner">
+          <motion.div 
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            className="portal-header-banner"
+          >
             <div className="header-text-block">
               <h1 className="viewport-title">{title}</h1>
               {subtitle && <p className="viewport-subtitle">{subtitle}</p>}
@@ -150,11 +214,16 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
               <span className="live-dot"></span>
               <span>Live Portal Database</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="viewport-content-wrapper">
+          <motion.div 
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.05 }}
+            className="viewport-content-wrapper"
+          >
             {children}
-          </div>
+          </motion.div>
         </main>
       </div>
     </div>
@@ -162,4 +231,3 @@ const PortalLayout = ({ children, activeNav, title, subtitle }) => {
 };
 
 export default PortalLayout;
-

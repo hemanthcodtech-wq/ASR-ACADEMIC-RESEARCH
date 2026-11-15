@@ -22,6 +22,7 @@ import {
   YoutubeIcon,
   TwitterIcon
 } from '../components/SocialIcons';
+import PageHero from '../components/PageHero';
 import './Contact.css';
 
 const Contact = () => {
@@ -66,48 +67,36 @@ const Contact = () => {
 
   return (
     <div className="contact-page-wrapper">
-      {/* 1. Hero Section Aligned with Services & Membership Design */}
-      <section className="contact-hero-showcase">
-        <div className="contact-hero-glow"></div>
-        <div className="contact-hero-container">
-          <div className="contact-hero-badge">
-            <Headphones size={14} className="hero-headphone-icon" />
-            <span>24/7 DEDICATED ACADEMIC SUPPORT</span>
+      {/* 1. Hero Section */}
+      <PageHero
+        badge="24/7 DEDICATED ACADEMIC SUPPORT"
+        title="Start Your Research Journey with"
+        highlightText="Expert Guidance"
+        subtitle="Have a question, need manuscript evaluation, or want to start your PhD support? Connect with our senior consultants across India and globally."
+      >
+        {/* Quick Metrics Bar */}
+        <div className="contact-hero-metrics" style={{ margin: '0 auto' }}>
+          <div className="hero-metric-item">
+            <span className="metric-val">&lt; 2 Hrs</span>
+            <span className="metric-lbl">Response Time</span>
           </div>
-
-          <h1 className="contact-hero-heading">
-            Start Your Research Journey with <br />
-            <span className="hero-text-accent">Expert Guidance</span>
-          </h1>
-
-          <p className="contact-hero-desc">
-            Have a question, need manuscript evaluation, or want to start your PhD support? Connect with our senior consultants across India and globally.
-          </p>
-
-          {/* Quick Metrics Bar */}
-          <div className="contact-hero-metrics">
-            <div className="hero-metric-item">
-              <span className="metric-val">&lt; 2 Hrs</span>
-              <span className="metric-lbl">Response Time</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">4 Hubs</span>
-              <span className="metric-lbl">Regional Presence</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">100%</span>
-              <span className="metric-lbl">Confidential & Ethical</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">ISO 9001</span>
-              <span className="metric-lbl">Quality Certified</span>
-            </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">4 Hubs</span>
+            <span className="metric-lbl">Regional Presence</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">100%</span>
+            <span className="metric-lbl">Confidential &amp; Ethical</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">ISO 9001</span>
+            <span className="metric-lbl">Quality Certified</span>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* 2. Interactive Quick Contact Strip */}
       <section className="contact-quick-strip">

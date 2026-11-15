@@ -20,6 +20,7 @@ import {
   HelpCircle
 } from 'lucide-react';
 import ContactBlock from '../components/ContactBlock';
+import PageHero from '../components/PageHero';
 import './Membership.css';
 
 const Membership = () => {
@@ -137,48 +138,36 @@ const Membership = () => {
 
   return (
     <div className="membership-page">
-      {/* 1. Hero Section (Matching Services Page Atmospheric Gradient & Metrics) */}
-      <section className="membership-hero-showcase">
-        <div className="membership-hero-glow"></div>
-        <div className="membership-hero-container">
-          <div className="membership-hero-badge">
-            <Users size={14} className="hero-users-icon" />
-            <span>GLOBAL SCHOLARLY COMMUNITY</span>
+      {/* 1. Hero Section */}
+      <PageHero
+        badge="GLOBAL SCHOLARLY COMMUNITY"
+        title="Join the ASR Academic Community &"
+        highlightText="Elevate Your Research Journey"
+        subtitle="Become an esteemed member of a premier global academic network across 50+ countries. Gain priority journal assistance, patent facilitation, thesis mentorship, and exclusive scholarly opportunities."
+      >
+        {/* Quick Metrics Bar */}
+        <div className="membership-hero-metrics" style={{ margin: '0 auto' }}>
+          <div className="hero-metric-item">
+            <span className="metric-val">2,000+</span>
+            <span className="metric-lbl">Active Members</span>
           </div>
-
-          <h1 className="membership-hero-heading">
-            Join the ASR Academic Community & <br />
-            <span className="hero-text-accent">Elevate Your Research Journey</span>
-          </h1>
-
-          <p className="membership-hero-desc">
-            Become an esteemed member of a premier global academic network across 50+ countries. Gain priority journal assistance, patent facilitation, thesis mentorship, and exclusive scholarly opportunities.
-          </p>
-
-          {/* Quick Metrics Bar */}
-          <div className="membership-hero-metrics">
-            <div className="hero-metric-item">
-              <span className="metric-val">2,000+</span>
-              <span className="metric-lbl">Active Members</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">50+</span>
-              <span className="metric-lbl">Countries Connected</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">100%</span>
-              <span className="metric-lbl">Verified Digital ID</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">ISO 9001</span>
-              <span className="metric-lbl">Certified Quality</span>
-            </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">50+</span>
+            <span className="metric-lbl">Countries Connected</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">100%</span>
+            <span className="metric-lbl">Verified Digital ID</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">ISO 9001</span>
+            <span className="metric-lbl">Certified Quality</span>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* 2. Sticky Category Filter Navigation */}
       <section className="membership-filter-section">

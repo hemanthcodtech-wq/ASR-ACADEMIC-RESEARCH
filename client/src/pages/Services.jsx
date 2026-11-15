@@ -25,6 +25,7 @@ import {
   Target
 } from 'lucide-react';
 import ContactBlock from '../components/ContactBlock';
+import PageHero from '../components/PageHero';
 import './Services.css';
 
 const Services = () => {
@@ -193,47 +194,35 @@ const Services = () => {
   return (
     <div className="services-page">
       {/* 1. Hero Section */}
-      <section className="services-hero-showcase">
-        <div className="services-hero-glow"></div>
-        <div className="services-hero-container">
-          <div className="services-hero-badge">
-            <Sparkles size={14} className="hero-sparkle" />
-            <span>GLOBAL RESEARCH SERVICES DIRECTORY</span>
+      <PageHero
+        badge="GLOBAL RESEARCH SERVICES DIRECTORY"
+        title="Complete Academic & Research"
+        highlightText="Support Under One Roof"
+        subtitle="From research idea and patent protection to Scopus indexation and institutional excellence — we deliver ethical, high-impact academic consultancy trusted across 50+ countries."
+      >
+        {/* Quick Metrics Bar */}
+        <div className="services-hero-metrics" style={{ margin: '0 auto' }}>
+          <div className="hero-metric-item">
+            <span className="metric-val">15+</span>
+            <span className="metric-lbl">Years of Excellence</span>
           </div>
-          
-          <h1 className="services-hero-heading">
-            Complete Academic & Research <br />
-            <span className="hero-text-accent">Support Under One Roof</span>
-          </h1>
-
-          <p className="services-hero-desc">
-            From research idea and patent protection to Scopus indexation and institutional excellence — we deliver ethical, high-impact academic consultancy trusted across 50+ countries.
-          </p>
-
-          {/* Quick Metrics Bar */}
-          <div className="services-hero-metrics">
-            <div className="hero-metric-item">
-              <span className="metric-val">15+</span>
-              <span className="metric-lbl">Years of Excellence</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">5,000+</span>
-              <span className="metric-lbl">Publications Assisted</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">100%</span>
-              <span className="metric-lbl">Ethical Turnitin Quality</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">ISO 9001</span>
-              <span className="metric-lbl">Certified Standards</span>
-            </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">5,000+</span>
+            <span className="metric-lbl">Publications Assisted</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">100%</span>
+            <span className="metric-lbl">Ethical Turnitin Quality</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">ISO 9001</span>
+            <span className="metric-lbl">Certified Standards</span>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* 2. Interactive Search & Category Filter Navigation */}
       <section className="services-filter-section">

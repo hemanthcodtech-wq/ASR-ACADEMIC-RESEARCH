@@ -197,8 +197,12 @@ const PaperTrackingPage = () => {
                       <div className="spec-icon-box purple"><Calendar size={18} /></div>
                       <div>
                         <span className="spec-mini-label">Submission &amp; Milestone Date</span>
-                        <strong className="spec-main-val">{currentPaper.submission_date || currentPaper.submittedDate}</strong>
-                        <span className="spec-sub-val">Decision Expected: {currentPaper.expected_decision_date || 'Under review'}</span>
+                        <strong className="spec-main-val">
+                          {(currentPaper.submission_date || currentPaper.submittedDate || '').split('T')[0] || 'Recent'}
+                        </strong>
+                        <span className="spec-sub-val">
+                          Decision Expected: {(currentPaper.expected_decision_date || '').split('T')[0] || 'Under review'}
+                        </span>
                       </div>
                     </div>
                   </div>

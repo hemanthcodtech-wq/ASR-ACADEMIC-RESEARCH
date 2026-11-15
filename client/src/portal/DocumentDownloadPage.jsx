@@ -162,7 +162,7 @@ const DocumentDownloadPage = () => {
                         <div className="doc-tile-meta">
                           <span>Size: {doc.file_size || '1.2 MB'}</span>
                           <span>•</span>
-                          <span>Issued: {doc.uploaded_at || 'Recent'}</span>
+                          <span>Issued: {(doc.uploaded_at || 'Recent').split('T')[0]}</span>
                         </div>
                       </div>
 

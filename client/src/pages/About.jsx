@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHero from '../components/PageHero';
 import aboutTeamImg from '../assets/about-team.jpg';
 import {
   Clock,
@@ -21,17 +22,12 @@ const About = () => {
   return (
     <div className="about-page">
       {/* 1. Welcome Header Banner */}
-      <section className="about-welcome-hero">
-        <div className="about-welcome-container">
-          <div className="about-welcome-badge">
-            <Sparkles size={14} /> WELCOME TO ASR
-          </div>
-          <h1>About Us</h1>
-          <p>
-            Learn about ASR Academic Research Solutions, our legacy of over 15 years, our mission, and why thousands of researchers worldwide trust us with their academic journey.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="WELCOME TO ASR ACADEMIC RESEARCH"
+        title="About"
+        highlightText="ASR Solutions"
+        subtitle="Learn about ASR Academic Research Solutions, our legacy of over 15 years, our mission, and why thousands of researchers worldwide trust us with their academic journey."
+      />
 
       {/* 2. About ASR Research Solutions Main Content */}
       <section className="about-section-wrapper">

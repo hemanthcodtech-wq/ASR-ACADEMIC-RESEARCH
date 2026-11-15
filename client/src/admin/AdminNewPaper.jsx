@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import AdminLayout from './AdminLayout';
 import { api, API_BASE } from '../portal/apiService';
 import * as XLSX from 'xlsx';
@@ -343,7 +344,9 @@ const AdminNewPaper = () => {
         {/* Top Tab Mode Switcher: Excel Import vs Single Form */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
           <div style={{ display: 'inline-flex', background: '#e2e8f0', padding: '4px', borderRadius: '12px' }}>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="button"
               onClick={() => { setActiveTab('single'); setErrorMsg(''); }}
               style={{
@@ -363,9 +366,11 @@ const AdminNewPaper = () => {
             >
               <FileText size={16} />
               <span>Single Entry Window (Multi-Author)</span>
-            </button>
+            </motion.button>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="button"
               onClick={() => { setActiveTab('excel'); setErrorMsg(''); }}
               style={{
@@ -385,11 +390,13 @@ const AdminNewPaper = () => {
             >
               <FileSpreadsheet size={16} />
               <span>Direct Excel Sheet Upload (.xlsx)</span>
-            </button>
+            </motion.button>
           </div>
 
           {activeTab === 'excel' && (
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="button"
               onClick={downloadSampleTemplate}
               style={{
@@ -408,7 +415,7 @@ const AdminNewPaper = () => {
             >
               <Download size={14} />
               <span>Download Excel Template</span>
-            </button>
+            </motion.button>
           )}
         </div>
 

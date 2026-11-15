@@ -17,39 +17,28 @@ import {
   ExternalLink
 } from 'lucide-react';
 import ContactBlock from '../components/ContactBlock';
+import PageHero from '../components/PageHero';
 import './Journals.css';
 
 const Journals = () => {
   return (
     <div className="page-container journals-overview-page">
       {/* 1. Hero Banner */}
-      <section className="journals-hero-showcase">
-        <div className="journals-hero-glow"></div>
-        <div className="journals-hero-container">
-          <div className="journals-hero-badge">
-            <Sparkles size={14} className="hero-sparkle" />
-            <span>GLOBAL INDEXED JOURNALS PORTFOLIO</span>
-          </div>
-
-          <h1 className="journals-hero-heading">
-            Publish in Globally <br />
-            <span className="hero-text-accent">Recognized Journals</span>
-          </h1>
-
-          <p className="journals-hero-desc">
-            We provide expert guidance and end-to-end support to help researchers publish in high-impact, indexed journals including SCI, SCIE, Scopus, Web of Science Core, and UGC-CARE approved international platforms.
-          </p>
-
-          <div className="journals-cta-nav-pills">
-            <Link to="/sci-scie-journals" className="journal-nav-pill active-pill">
-              <Award size={16} /> Explore SCI / SCIE Indexed Journals (62+)
-            </Link>
-            <Link to="/scopus-indexed-journals" className="journal-nav-pill">
-              <BookOpen size={16} /> Explore Scopus Indexed Journals (58+)
-            </Link>
-          </div>
+      <PageHero
+        badge="GLOBAL INDEXED JOURNALS PORTFOLIO"
+        title="Publish in Globally"
+        highlightText="Recognized Journals"
+        subtitle="We provide expert guidance and end-to-end support to help researchers publish in high-impact, indexed journals including SCI, SCIE, Scopus, Web of Science Core, and UGC-CARE approved international platforms."
+      >
+        <div className="journals-cta-nav-pills" style={{ justifyContent: 'center' }}>
+          <Link to="/sci-scie-journals" className="journal-nav-pill active-pill">
+            <Award size={16} /> Explore SCI / SCIE Indexed Journals (62+)
+          </Link>
+          <Link to="/scopus-indexed-journals" className="journal-nav-pill">
+            <BookOpen size={16} /> Explore Scopus Indexed Journals (58+)
+          </Link>
         </div>
-      </section>
+      </PageHero>
 
       {/* 2. Enhanced Highlights Metrics Cards Section */}
       <section className="journals-metrics-showcase-section">

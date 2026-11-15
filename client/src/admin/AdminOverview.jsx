@@ -83,7 +83,7 @@ const AdminOverview = () => {
               {papers.length}
             </div>
             <div style={{ fontSize: '12px', color: '#16a34a', fontWeight: 600, marginTop: '4px' }}>
-              Live in Neon DB repository
+              Live On
             </div>
           </div>
 
@@ -179,7 +179,7 @@ const AdminOverview = () => {
         </div>
 
         {/* Live Database Manuscripts Table */}
-        <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
+        <div className="portal-table-responsive-wrapper">
           <div style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h3 style={{ fontSize: '15px', fontWeight: 700, margin: 0, color: '#0f172a' }}>Live Manuscript Repository (Direct DB Sync)</h3>
             <Link to="/admin/papers" style={{ fontSize: '12.5px', color: '#2563eb', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>

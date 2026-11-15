@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import TickerNotice from './components/TickerNotice';
+import PageTransition from './components/PageTransition';
 
 // Dedicated Pages
 import Home from './pages/Home';
@@ -46,6 +47,7 @@ import AdminProofs from './admin/AdminProofs';
 import AdminPayments from './admin/AdminPayments';
 import AdminCoordinators from './admin/AdminCoordinators';
 import AdminAudit from './admin/AdminAudit';
+import { AdminLayoutContainer } from './admin/AdminLayout';
 
 function MainLayout() {
   const location = useLocation();
@@ -59,49 +61,66 @@ function MainLayout() {
       <TickerNotice />
       {!isPortalPage && <Header />}
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/research-publication-support" element={<ResearchPublicationSupport />} />
-          <Route path="/services/:id" element={<ServiceDetail />} />
-          <Route path="/journals" element={<Journals />} />
-          <Route path="/sci-scie-journals" element={<SciJournals />} />
-          <Route path="/scopus-indexed-journals" element={<ScopusJournals />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/awards" element={<Awards />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/community/join-reviewer" element={<JoinAsReviewer />} />
-          <Route path="/community/editorial-board" element={<JoinEditorialBoard />} />
-          <Route path="/community/collaborate" element={<CollaborateWithUs />} />
-          <Route path="/community/benefits" element={<CommunityBenefits />} />
-          <Route path="/community/become-partner" element={<BecomePartner />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
+        <PageTransition>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/research-publication-support" element={<ResearchPublicationSupport />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
+            <Route path="/journals" element={<Journals />} />
+            <Route path="/sci-scie-journals" element={<SciJournals />} />
+            <Route path="/scopus-indexed-journals" element={<ScopusJournals />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/awards" element={<Awards />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/community/join-reviewer" element={<JoinAsReviewer />} />
+            <Route path="/join-as-reviewer" element={<JoinAsReviewer />} />
+            <Route path="/join-reviewer" element={<JoinAsReviewer />} />
 
-          {/* Dedicated Author Portal Pages */}
-          <Route path="/author-dashboard" element={<AuthorDashboard />} />
-          <Route path="/author-portal/tracking" element={<PaperTrackingPage />} />
-          <Route path="/author-portal/workflow" element={<WorkflowFlowPage />} />
-          <Route path="/author-portal/documents" element={<DocumentDownloadPage />} />
-          <Route path="/author-portal/notifications" element={<NotificationsPage />} />
-          <Route path="/author-portal/payments" element={<PaymentAccountPage />} />
-          <Route path="/author-portal/privacy-security" element={<PrivacySecurityPage />} />
-          <Route path="/author-portal/admin-management" element={<AdminStaffPage />} />
+            <Route path="/community/editorial-board" element={<JoinEditorialBoard />} />
+            <Route path="/join-editorial-board" element={<JoinEditorialBoard />} />
+            <Route path="/editorial-board" element={<JoinEditorialBoard />} />
 
-          {/* Dedicated Admin Portal Routes */}
-          <Route path="/admin" element={<AdminOverview />} />
-          <Route path="/admin/overview" element={<AdminOverview />} />
-          <Route path="/admin/authors" element={<AdminAuthors />} />
-          <Route path="/admin/papers" element={<AdminPapers />} />
-          <Route path="/admin/new-paper" element={<AdminNewPaper />} />
-          <Route path="/admin/proofs" element={<AdminProofs />} />
-          <Route path="/admin/payments" element={<AdminPayments />} />
-          <Route path="/admin/coordinators" element={<AdminCoordinators />} />
-          <Route path="/admin/audit" element={<AdminAudit />} />
-        </Routes>
+            <Route path="/community/collaborate" element={<CollaborateWithUs />} />
+            <Route path="/collaborate-with-us" element={<CollaborateWithUs />} />
+            <Route path="/collaborate" element={<CollaborateWithUs />} />
+
+            <Route path="/community/benefits" element={<CommunityBenefits />} />
+            <Route path="/community-benefits" element={<CommunityBenefits />} />
+
+            <Route path="/community/become-partner" element={<BecomePartner />} />
+            <Route path="/become-partner" element={<BecomePartner />} />
+            <Route path="/partner" element={<BecomePartner />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+
+            {/* Dedicated Author Portal Pages */}
+            <Route path="/author-dashboard" element={<AuthorDashboard />} />
+            <Route path="/author-portal/tracking" element={<PaperTrackingPage />} />
+            <Route path="/author-portal/workflow" element={<WorkflowFlowPage />} />
+            <Route path="/author-portal/documents" element={<DocumentDownloadPage />} />
+            <Route path="/author-portal/notifications" element={<NotificationsPage />} />
+            <Route path="/author-portal/payments" element={<PaymentAccountPage />} />
+            <Route path="/author-portal/privacy-security" element={<PrivacySecurityPage />} />
+            <Route path="/author-portal/admin-management" element={<AdminStaffPage />} />
+
+            {/* Dedicated Admin Portal Routes - Persistent Sidebar & Header Layout */}
+            <Route path="/admin" element={<AdminLayoutContainer />}>
+              <Route index element={<AdminOverview />} />
+              <Route path="overview" element={<AdminOverview />} />
+              <Route path="authors" element={<AdminAuthors />} />
+              <Route path="papers" element={<AdminPapers />} />
+              <Route path="new-paper" element={<AdminNewPaper />} />
+              <Route path="proofs" element={<AdminProofs />} />
+              <Route path="payments" element={<AdminPayments />} />
+              <Route path="coordinators" element={<AdminCoordinators />} />
+              <Route path="audit" element={<AdminAudit />} />
+            </Route>
+          </Routes>
+        </PageTransition>
       </main>
       {!isPortalPage && <Footer />}
     </div>

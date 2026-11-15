@@ -24,6 +24,7 @@ import {
   Star
 } from 'lucide-react';
 import ContactBlock from '../components/ContactBlock';
+import PageHero from '../components/PageHero';
 import './Awards.css';
 
 const awardsCatalogue = [
@@ -149,63 +150,51 @@ const Awards = () => {
 
   return (
     <div className="awards-page">
-      {/* 1. Hero Banner (Redesigned with Premium Royal Aura & Showcase Media Grid) */}
-      <section className="awards-hero-showcase">
-        <div className="awards-hero-glow"></div>
-        <div className="awards-hero-container">
-          <div className="awards-hero-badge">
-            <Trophy size={14} className="hero-trophy-icon" />
-            <span>GLOBAL SCHOLARLY RECOGNITION</span>
-          </div>
-
-          <h1 className="awards-hero-heading">
-            Celebrating Academic Excellence & <br />
-            <span className="hero-text-accent">Global Research Innovation</span>
-          </h1>
-
-          <p className="awards-hero-desc">
-            ASR Academic Research Solutions proudly honors visionary scholars, educators, institutions, and innovators whose breakthrough discoveries drive academic leadership worldwide.
-          </p>
-
-          {/* Featured Trophy Card Frame */}
-          <div className="awards-featured-image-wrapper">
-            <div className="awards-image-frame">
-              <img 
-                src={awardsTrophyImg} 
-                alt="Academic Excellence Trophy and Awards" 
-                className="awards-trophy-photo" 
-              />
-              <div className="awards-image-overlay-caption">
-                <span className="caption-gold">ASR Annual Academic Excellence Trophy & Citation</span>
-                <span className="caption-sub">Recognized Across 50+ Global Universities</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Metrics Bar */}
-          <div className="awards-hero-metrics">
-            <div className="hero-metric-item">
-              <span className="metric-val">9</span>
-              <span className="metric-lbl">Prestigious Categories</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">500+</span>
-              <span className="metric-lbl">Awardees Honored</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">100%</span>
-              <span className="metric-lbl">Jury Peer-Evaluated</span>
-            </div>
-            <div className="metric-divider"></div>
-            <div className="hero-metric-item">
-              <span className="metric-val">ISO 9001</span>
-              <span className="metric-lbl">Certified Program</span>
+      {/* 1. Hero Banner */}
+      <PageHero
+        badge="GLOBAL SCHOLARLY RECOGNITION"
+        title="Celebrating Academic Excellence &"
+        highlightText="Global Research Innovation"
+        subtitle="ASR Academic Research Solutions proudly honors visionary scholars, educators, institutions, and innovators whose breakthrough discoveries drive academic leadership worldwide."
+      >
+        {/* Featured Trophy Card Frame */}
+        <div className="awards-featured-image-wrapper">
+          <div className="awards-image-frame">
+            <img 
+              src={awardsTrophyImg} 
+              alt="Academic Excellence Trophy and Awards" 
+              className="awards-trophy-photo" 
+            />
+            <div className="awards-image-overlay-caption">
+              <span className="caption-gold">ASR Annual Academic Excellence Trophy &amp; Citation</span>
+              <span className="caption-sub">Recognized Across 50+ Global Universities</span>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* Quick Metrics Bar */}
+        <div className="awards-hero-metrics" style={{ margin: '24px auto 0' }}>
+          <div className="hero-metric-item">
+            <span className="metric-val">9</span>
+            <span className="metric-lbl">Prestigious Categories</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">500+</span>
+            <span className="metric-lbl">Awardees Honored</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">100%</span>
+            <span className="metric-lbl">Jury Peer-Evaluated</span>
+          </div>
+          <div className="metric-divider"></div>
+          <div className="hero-metric-item">
+            <span className="metric-val">ISO 9001</span>
+            <span className="metric-lbl">Certified Program</span>
+          </div>
+        </div>
+      </PageHero>
 
       {/* 2. Interactive Search & Category Filter Navigation */}
       <section className="awards-filter-section">
